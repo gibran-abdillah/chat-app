@@ -2,7 +2,7 @@
     "builds": [{
         "src": "chat_app/asgi.py",
         "use": "@now/python",
-        "config": { "maxLambdaSize": "17mb" }
+        "config": { "maxLambdaSize": "15mb" }
     }],
     "routes": [
         {
