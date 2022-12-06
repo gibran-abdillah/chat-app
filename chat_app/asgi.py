@@ -17,9 +17,11 @@ from channels.auth import AuthMiddlewareStack
 import apps.chat.routing
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chat_app.settings')
 
+asgi_application = get_asgi_application()
+
 application = ProtocolTypeRouter(
     {
-        "http":get_asgi_application(),
+        "http":asgi_application,
         "websocket":AllowedHostsOriginValidator(
             AuthMiddlewareStack(URLRouter(apps.chat.routing.websocket_urlpatterns))
         )
