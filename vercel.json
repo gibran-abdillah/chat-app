@@ -13,8 +13,12 @@
     ],
     "routes": [
         {
-            "src": "(.*)",
+            "src": "/(.*)",
             "dest": "chat_app/asgi.py"
+        },
+        {
+            "src":"/static/(.*)",
+            "dest":"/static/$1"
         }
     ]
 }
