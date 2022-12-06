@@ -3,6 +3,7 @@ from channels.db import database_sync_to_async
 from .models import Chat , Room , Visitor
 from django.contrib.auth.models import User
 from bots import BotHandler
+from datetime import datetime
 from asgiref.sync import sync_to_async
 import json, html, asyncio
     
@@ -13,7 +14,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         self.room_code = self.scope["url_route"]["kwargs"]["room_code"]
         self.group_room_code = f'chat_{self.room_code}'
         self.sender = str(self.scope.get("user"))
-
+        
         self.room_model = await self.get_room_model()
         self.bots = await self.active_bots()
         self.bothandler = BotHandler(self.bots, self.group_room_code)
@@ -35,7 +36,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         )
 
         await self.accept()
-
+        
     async def disconnect(self, code):
         await self.channel_layer.group_send(
             self.group_room_code,
@@ -55,13 +56,17 @@ class ChatConsumer(AsyncWebsocketConsumer):
         message = json_data.get('message')
     
         saved = await self.save_message(message)
+        if saved:
+            date = saved.created 
+        else:
+            date = datetime.utcnow()
         await self.channel_layer.group_send(
             self.group_room_code, 
             {
                 "type":"chat.message",
                 "message":message,
                 "sender":self.sender,
-                "date":str(saved.created)
+                "date":str(date)
             }
         )
         
