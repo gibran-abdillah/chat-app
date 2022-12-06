@@ -10,10 +10,6 @@
                 "use":"@vercel/static-build",
                 "config":{"distDir":"dist/"}
             }
-        {
-            "src": "chat_app/asgi.py",
-            "use": "@now/python"
-        }
     ],
     "routes": [
         {
