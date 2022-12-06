@@ -1,8 +1,9 @@
 const split_path = window.location.pathname.split('/')
 const room_name = split_path[split_path.length - 1 ]
 const chatSection = document.getElementById("chat-content")
+var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
 const chatSocket = new WebSocket(
-    'ws://' + window.location.host + '/ws/chat/' + room_name +'/'
+    ws_scheme + '://' + window.location.host + '/ws/chat/' + room_name +'/'
 )
 const chat_div = document.querySelector(".chat")
 const menu = document.querySelector(".menu")
