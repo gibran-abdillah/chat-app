@@ -1,0 +1,11 @@
+.opening-text {
+    margin-top:15px;
+    line-height: 1.9;
+    font-weight: 400;
+}
+.header-text {
+    font-weight: 600;
+}
+.nav-link {
+    margin-left: 20px;
+}
