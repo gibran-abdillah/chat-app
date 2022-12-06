@@ -86,7 +86,8 @@ DATABASES = {
         'default':dj_database_url.config('DATABASE_URL')
 }
 
-if DEBUG:
+A = 0
+if A:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
