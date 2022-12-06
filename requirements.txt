@@ -22,7 +22,6 @@ hyperlink==21.0.0
 idna==3.4
 incremental==22.10.0
 msgpack==1.0.4
-mysqlclient==2.1.1
 packaging==21.3
 psycopg2-binary==2.9.5
 pyasn1==0.4.8
