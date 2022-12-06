@@ -5,6 +5,7 @@ var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
 const chatSocket = new WebSocket(
     ws_scheme + '://' + window.location.host + '/ws/chat/' + room_name +'/'
 )
+console.log(ws_scheme)
 const chat_div = document.querySelector(".chat")
 const menu = document.querySelector(".menu")
 const btnMessage = document.getElementById("send-message")
