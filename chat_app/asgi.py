@@ -24,6 +24,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chat_app.settings')
 application = ProtocolTypeRouter(
     {
         "http":asgi_application,
+        "https":asgi_application,
         "websocket":AllowedHostsOriginValidator(
             AuthMiddlewareStack(URLRouter(apps.chat.routing.websocket_urlpatterns))
         )
