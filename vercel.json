@@ -2,7 +2,7 @@
     "builds": [
             {
                 "src": "chat_app/asgi.py",
-                "use": "@now/python",
+                "use": "@vercel/python",
                 "config": { "maxLambdaSize": "15mb" , "runTime":"3.9"}
             },
             {
