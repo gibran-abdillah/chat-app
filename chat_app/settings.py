@@ -128,7 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 BOT_DIR = os.path.join(BASE_DIR, 'bots')
 STATIC_URL = 'static/'
-STAITC_ROOT = 'static/'
+STATIC_ROOT = 'static/'
 ASGI_APPLICATION = "chat_app.asgi.application"
 USER_AGENT_BLACKLIST = ['google','bing','yahoo','duckduckgo']
 LOGIN_URL = '/login'
