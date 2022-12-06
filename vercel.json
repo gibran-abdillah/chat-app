@@ -1,5 +1,6 @@
 {
     "builds": [
+<<<<<<< HEAD
             {
                 "src": "chat_app/asgi.py",
                 "use": "@now/python",
@@ -10,10 +11,16 @@
                 "use":"@vercel/static-build",
                 "config":{"distDir":"dist/"}
             }
+=======
+        {
+            "src": "chat_app/asgi.py",
+            "use": "@now/python"
+        }
+>>>>>>> 058d518d740f33bca315834da04fed98499e523f
     ],
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "(.*)",
             "dest": "chat_app/asgi.py"
         }
     ]

@@ -10,7 +10,6 @@
     max-width: 80%;
 }
 .wrapper {
-    max-width: 600px;
     min-height: 100vh;
     margin: auto;
     background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(https://cdn.wallpapersafari.com/27/32/jt4AoG.jpg);
@@ -110,7 +109,6 @@
 
 .chat-input {
     position: fixed;
-    max-width: 600px;
     width: 100%;
     bottom: 0;
     padding: 0.5rem 1rem;
