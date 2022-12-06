@@ -14,7 +14,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "chat_app/wsgi.py"
+            "dest": "chat_app/asgi.py"
         },
         {
             "src":"/static/(.*)",
